@@ -13,10 +13,13 @@ export class Position {
     }
   }
 
+  //Check the current position is valid or not.
   IsValid() {
     return this.x >= 0 && this.y >= 0 && this.x <= this.maxX && this.y <= this.maxY;
   }
 
+
+  //Move to certain direction
   Move(directionValue) {
     let originalX = this.x;
     let originalY = this.y;

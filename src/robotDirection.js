@@ -2,6 +2,7 @@ import { DirectionString, DirectionValue, TurnDirection } from './enum'
 
 export class RobotDirection {
 
+  //Get the value of direction based on the text
   static GetDirection(directionString) {
     switch (directionString) {
       case DirectionString.EAST:
@@ -18,9 +19,12 @@ export class RobotDirection {
   }
 
   constructor(direction) {
+    //DirectionValue
     this.currentDirection = direction;
   }
 
+
+  //Use bit operator to turn left/right
   Turn(turn) {
     let newDirection;
     switch (turn) {
@@ -44,6 +48,7 @@ export class RobotDirection {
     this.currentDirection = newDirection;
   }
 
+  //Get the text of direction by value
   GetString() {
     switch (this.currentDirection) {
       case DirectionValue.EAST:

@@ -12,6 +12,7 @@ const maxY = 5;
 
 let robot = undefined;
 
+//Use readline to handle the user input
 rl.on('line', (line) => {
     try {
         switch (line.split(' ')[0]) {
@@ -51,7 +52,7 @@ rl.on('line', (line) => {
 
     }
 });
+
 rl.on('close', function () {
-    console.log('bye bye');
     process.exit(0);
 });

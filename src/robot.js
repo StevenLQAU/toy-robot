@@ -2,6 +2,7 @@ import { Position } from './position';
 import { TurnDirection } from './enum';
 import { RobotDirection} from './robotDirection';
 
+
 export class Robot {
 
   constructor(x, y, maxX, maxY, direction) {
@@ -9,6 +10,9 @@ export class Robot {
     this.direction = new RobotDirection(direction);
   }
 
+  /**
+   * Move 1 step based on current faced direction
+   */
   Move() {
     this.position.Move(this.direction.currentDirection);
   }

@@ -1,6 +1,6 @@
-import { Position } from '../src/position';
-import { TurnDirection } from '../src/enum';
-import { RobotDirection} from '../src/robotDirection';
+import { Position } from './position';
+import { TurnDirection } from './enum';
+import { RobotDirection} from './robotDirection';
 
 export class Robot {
 

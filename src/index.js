@@ -1,27 +1,43 @@
 import { createInterface } from 'readline';
+import { Robot } from './robot';
+import { RobotDirection } from './robotDirection';
 
-var rl = createInterface({
+const rl = createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+const maxX = 5;
+const maxY = 5;
+
+let robot = undefined;
+
 rl.on('line', (line) => {
-    try{
+    try {
         switch (line.split(' ')[0]) {
             case 'PLACE':
-                console.log(line);
+                const params = line.split(' ')[1].split(',');
+                robot = new Robot(+params[0], +params[1], maxX, maxY, RobotDirection.GetDirection(params[2]));
                 break;
             case 'MOVE':
-                console.log(line);
+                if (!!robot) {
+                    robot.Move();
+                }
                 break;
             case 'LEFT':
-                console.log(line);
+                if (!!robot) {
+                    robot.TurnLeft();
+                }
                 break;
             case 'RIGHT':
-                console.log(line);
+                if (!!robot) {
+                    robot.TurnRight();
+                }
                 break;
             case 'REPORT':
-                console.log(line);
+                if (!!robot) {
+                    console.log(robot.Report());
+                }              
                 break;
             case 'close':
                 rl.close();
@@ -33,7 +49,7 @@ rl.on('line', (line) => {
     }
     catch (err) {
 
-    }  
+    }
 });
 rl.on('close', function () {
     console.log('bye bye');

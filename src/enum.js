@@ -1,10 +1,3 @@
-const makeEnum = (arr) => {
-    let obj = {};
-    for (let val of arr) {
-        obj[val] = Symbol(val);
-    }
-    return Object.freeze(obj);
-}
 
 export class DirectionValue { }
 DirectionValue.EAST = 0b0001;

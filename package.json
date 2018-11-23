@@ -1,0 +1,26 @@
+{
+  "name": "toy-robot",
+  "version": "1.0.0",
+  "description": "toy-robot",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node build/index.js",
+    "build": "babel src -d build --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.realestate.com.au:recruiting/toy-robot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.2.0"
+  }
+}

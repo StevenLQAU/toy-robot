@@ -40,6 +40,5 @@ describe("RobotDirection", () => {
 
     direction.Turn(TurnDirection.RIGHT);
     equal(direction.GetString(), DirectionString.NORTH);
-
   })
 })
